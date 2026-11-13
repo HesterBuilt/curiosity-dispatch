@@ -35,7 +35,20 @@ def run():
         except Exception: dt=now
         if (now-dt).days>30:continue
         seen.add(key)
-        allitems.append({'title':title,'url':link,'category':category,'source':item.findtext('source') or 'Publisher','date':dt.isoformat()})
+        entry={'title':title,'url':link,'category':category,'source':item.findtext('source') or 'Publisher','date':dt.isoformat()}
+        # Use publisher-supplied RSS images only when present; never invent a story photo.
+        media_ns='{http://search.yahoo.com/mrss/}'
+        image=None
+        for node in (item.find(media_ns+'thumbnail'),item.find(media_ns+'content'),item.find('enclosure')):
+          if node is not None:
+            candidate=node.get('url','').strip()
+            media_type=node.get('type','')
+            if candidate.startswith('https://') and (node.tag!='enclosure' or media_type.startswith('image/')):
+              image=candidate
+              break
+        if image:
+          entry['image']=image
+        allitems.append(entry)
     except Exception as e: print('Skipped',category,repr(e))
   allitems.sort(key=lambda x:x['date'],reverse=True)
   (ROOT/'news.json').write_text(json.dumps({'updated':now.isoformat(),'stories':allitems},ensure_ascii=False,indent=2),encoding='utf-8')
