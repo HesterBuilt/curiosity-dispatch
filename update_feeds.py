@@ -1,7 +1,8 @@
 import json, datetime, urllib.parse, urllib.request, xml.etree.ElementTree as ET, email.utils, re, html, pathlib
 ROOT=pathlib.Path(__file__).parent
 QUERIES={
-'Close to Home':'Gainesville Hall County North Georgia unusual discoveries history local news',
+'Close to Home':'Gainesville Hall County Oakwood Flowery Branch Braselton Dahlonega Georgia local news',
+'Local & Peculiar':'Gainesville Hall County North Georgia quirky unusual wildlife discoveries folklore local news',
 'The Future Is Weird':'robotics artificial intelligence inventions emerging technology discoveries',
 'The Human Mind':'neuroscience psychology memory consciousness research discoveries',
 'Medical Frontiers':'medical research clinical breakthroughs genetics new treatment study',
