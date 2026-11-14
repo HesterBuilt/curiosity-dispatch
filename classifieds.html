@@ -97,6 +97,43 @@ body{background:radial-gradient(circle at 90% 8%,#f4e7d5,transparent 36%),radial
 .nav a[aria-current]{background:#4d5a48;color:#fff7e9}
 .toolbar input,.toolbar select,.toolbar button{background:#fff8ed;border-color:#786d5d;box-shadow:2px 2px 0 #d6c6af}
 .dialog{background:#f4ebdc;border-color:#fff8ed;outline-color:#5a5247}
+
+/* Authentic mixed newspaper advertising treatments: display ads, boxed notices, tiny classifieds. */
+.classifieds{grid-auto-flow:row dense;align-items:stretch}
+.ad{min-height:185px;padding:13px 12px 10px;text-align:left}
+.ad .tag{font-size:10px;letter-spacing:.3px;background:none;color:#39352f}
+.ad h3{font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:clamp(16px,1.8vw,25px);letter-spacing:-.7px;line-height:1.18}
+.ad p{font-family:'Courier Prime','Courier New',monospace;font-size:13px;line-height:1.38}
+.ad .foot{padding-top:5px;border-top:1px dotted #81715e}
+.ad .foot button{font-size:10px;text-decoration:underline;text-underline-offset:2px}
+.ad .ad-kicker{font:700 11px/1.1 'Courier Prime',monospace;letter-spacing:1px;text-transform:uppercase}
+.ad .ad-price{font:700 clamp(28px,3vw,49px)/1 'Libre Baskerville',Georgia,serif;letter-spacing:-2px;margin:7px 0;color:#302b25}
+.ad .ad-imprint{font:700 9px/1.4 'Courier Prime',monospace;text-transform:uppercase;letter-spacing:.5px;margin:9px 0 8px;border-top:1px solid #736c60;padding-top:5px}
+.ad.display{border:4px double #37352e;text-align:center;padding:16px 13px}
+.ad.display .tag{display:block;background:#34352e;color:#f9f1e4;padding:6px}
+.ad.display h3{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(23px,2.6vw,39px);text-transform:uppercase;line-height:1.04;margin:15px 0}
+.ad.display p{font-family:Georgia,serif;font-size:15px;line-height:1.3}
+.ad.display .ad-imprint{border-top:3px double #50483d}
+.ad.display .ad-price{font-size:clamp(38px,4vw,60px)}
+.ad.compact{min-height:150px;padding:12px 11px}
+.ad.compact h3{font:700 17px/1.18 'Courier Prime',monospace;text-transform:uppercase;margin:8px 0}
+.ad.compact p{font:12px/1.35 'Courier Prime',monospace}
+.ad.compact .ad-imprint{font-size:9px}
+.ad.notice{border:2px solid #454039;background:#f7efdf;text-align:center}
+.ad.notice .tag{display:block;border-top:3px solid #302d29;border-bottom:3px solid #302d29;padding:5px 2px;font-weight:700}
+.ad.notice h3{font:700 clamp(21px,2.3vw,31px)/1.14 'Libre Baskerville',Georgia,serif;text-transform:uppercase}
+.ad.notice .ad-imprint{letter-spacing:1px}
+.ad.urgent{background:#e8d9c5;border:3px solid #493c33}
+.ad.urgent h3{font-family:'Special Elite','Courier New',monospace;font-size:clamp(23px,2.6vw,36px);text-transform:uppercase;letter-spacing:-1.5px}
+.ad.urgent .tag{display:block;font-size:14px;border-bottom:4px solid #3b3831;padding-bottom:6px}
+.ad.featured{grid-column:span 2;background:#f0e1c9;border:5px double #3b352c;text-align:center}
+.ad.featured h3{font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:clamp(30px,4vw,58px);line-height:1.02}
+.ad.featured .tag{display:block;background:#3b352c;color:#fff5e7;padding:8px;font-size:13px;letter-spacing:2px}
+.ad.featured p{font:clamp(16px,1.8vw,21px)/1.35 Georgia,serif;max-width:530px;margin:0 auto 15px}
+.ad.featured .ad-imprint{border-top:3px double #524638}
+.ad .ad-rule{border:0;border-top:3px double #4e463c;margin:7px 0}
+.archive-cutout img{filter:grayscale(1) sepia(.12) contrast(1.13)}
+@media(max-width:650px){.ad.display h3{font-size:24px}.ad.featured h3{font-size:33px}.ad .ad-price{font-size:30px}}
 </style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. A little newspaper corner for strange announcements and extraordinary nonsense.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Notices & Other Nonsense</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">THE ODD EDITION · VOL. I</span></section><section class="paper"><div class="paperhead"><small>EST. SOMEWHERE BETWEEN FACT & FANCY</small><h2>THE PECULIAR PRESS</h2><p>All manner of unusual business conducted herein</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. No ghosts are presently employed by this publication.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
 <script>
 const notices=[
@@ -129,6 +166,6 @@ function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category
 {src:'images/classifieds/classifieds-4.jpeg',label:'Illustrated personals advertisement',type:'cover'},
 {src:'images/classifieds/classifieds-3.jpeg',label:'Unusual newspaper classified clipping',type:'wide'}
 ];let position=0;function addCutout(info){const figure=document.createElement('figure');figure.className='archive-cutout '+info.type;figure.style.margin='0';const img=document.createElement('img');img.src=info.src;img.alt=info.label;img.loading='lazy';const caption=document.createElement('figcaption');caption.textContent=info.label;figure.append(img,caption);$('ads').append(figure)}
-for(const n of list){if(!q&&!cat&&!savedOnly&&[1,3,6,9,12,15].includes(n.id))addCutout(archivalImages[position++]);const a=document.createElement('article');a.className='ad'+(n.featured&&!cat&&!q&&!savedOnly?' featured':'');const tag=document.createElement('span');tag.className='tag';tag.textContent='✦ '+n.category;const h=document.createElement('h3');h.textContent=n.title;const p=document.createElement('p');p.textContent=n.body;const foot=document.createElement('div');foot.className='foot';const read=document.createElement('button');read.textContent='Read full notice ↗';read.onclick=()=>openNotice(n);const save=document.createElement('button');save.textContent=s.includes(n.id)?'★ Saved':'☆ Save';save.setAttribute('aria-label',(s.includes(n.id)?'Unsave ':'Save ')+n.title);save.onclick=()=>toggle(n.id);foot.append(read,save);a.append(tag,h,p,foot);$('ads').append(a)}if(!list.length){const e=document.createElement('p');e.className='empty';e.textContent='No notices in this department. Try another drawer.';$('ads').append(e)}}
+for(const n of list){if(!q&&!cat&&!savedOnly&&[1,3,6,9,12,15].includes(n.id))addCutout(archivalImages[position++]);const a=document.createElement('article');const style=['compact','display','notice','urgent','compact','display','notice','compact'][n.id%8];a.className='ad '+style+(n.featured&&!cat&&!q&&!savedOnly?' featured':'');const tag=document.createElement('span');tag.className='tag';tag.textContent=(style==='urgent'?'!!! ':'')+n.category.toUpperCase();const h=document.createElement('h3');h.textContent=n.title;const p=document.createElement('p');p.textContent=n.body;const foot=document.createElement('div');foot.className='foot';const read=document.createElement('button');read.textContent='Read full notice ↗';read.onclick=()=>openNotice(n);const save=document.createElement('button');save.textContent=s.includes(n.id)?'★ Saved':'☆ Save';save.setAttribute('aria-label',(s.includes(n.id)?'Unsave ':'Save ')+n.title);save.onclick=()=>toggle(n.id);foot.append(read,save);const imprint=document.createElement('div');imprint.className='ad-imprint';imprint.textContent=({Wanted:'Applicants & inquiries invited', 'For Sale':'Private sale · particulars within','Lost & Found':'Reward for reliable information',Employment:'Apply in person · references requested','Public Notices':'By order of the peculiar committee'})[n.category];a.append(tag);if(style==='display'||n.featured){const rule=document.createElement('hr');rule.className='ad-rule';a.append(rule)}a.append(h);if(n.id===6||n.id===11||n.id===16){const price=document.createElement('div');price.className='ad-price';price.textContent=({6:'25¢',11:'$1.00',16:'10¢'})[n.id];a.append(price)}a.append(p,imprint,foot);$('ads').append(a)}if(!list.length){const e=document.createElement('p');e.className='empty';e.textContent='No notices in this department. Try another drawer.';$('ads').append(e)}}
 $('search').addEventListener('input',render);$('category').addEventListener('change',render);$('saved').onclick=()=>{savedOnly=!savedOnly;render()};$('surprise').onclick=()=>openNotice(notices[Math.floor(Math.random()*notices.length)]);$('close').onclick=()=>{$('modal').hidden=true};$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').hidden=true};document.addEventListener('keydown',e=>{if(e.key==='Escape')$('modal').hidden=true});render();
 </script></body></html>
