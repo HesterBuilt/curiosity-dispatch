@@ -134,25 +134,77 @@ body{background:radial-gradient(circle at 90% 8%,#f4e7d5,transparent 36%),radial
 .ad .ad-rule{border:0;border-top:3px double #4e463c;margin:7px 0}
 .archive-cutout img{filter:grayscale(1) sepia(.12) contrast(1.13)}
 @media(max-width:650px){.ad.display h3{font-size:24px}.ad.featured h3{font-size:33px}.ad .ad-price{font-size:30px}}
+
+/* Final newspaper compositor pass: dense broadsheet columns, not website cards. */
+body{background:#e9e4d9;color:#282620}
+.wrap{max-width:1220px;padding-top:16px}
+.mast{padding:19px 25px;border:1px solid #514b41;box-shadow:none;background:#eee7d9}
+.mast:before{font-size:10px;padding-bottom:6px;letter-spacing:.4px}
+.mast h1{font:700 clamp(35px,5vw,64px)/1.02 'Libre Baskerville',Georgia,serif;letter-spacing:-2px;margin:14px 0 7px;text-transform:uppercase}
+.mast p{font:13px/1.35 Georgia,serif;margin:6px 0;max-width:740px}
+.eyebrow{font-size:10px;letter-spacing:.5px}
+.nav{margin:14px 0;gap:6px}.nav a{border:1px solid #776c5d;border-radius:0;padding:8px 11px;font:700 11px 'Courier Prime',monospace;background:#f6f0e6}
+.intro{margin:22px 0 9px}.intro h2{font:700 23px 'Libre Baskerville',Georgia,serif}.intro p{font-size:12px}
+.paper{padding:14px 16px;background:#f2ebde;background-image:repeating-linear-gradient(0deg,rgba(67,51,32,.015) 0 1px,transparent 1px 3px);box-shadow:none;border:1px solid #8d8170}
+.paperhead{padding:8px 0 7px;border-top:5px solid #292721;border-bottom:4px double #292721}
+.paperhead h2{font:700 clamp(33px,5.2vw,67px)/.98 'Libre Baskerville',Georgia,serif;letter-spacing:-3px;margin:5px 0}
+.paperhead small{font:700 10px 'Courier Prime',monospace;letter-spacing:1px}
+.paperhead p{font:italic 12px Georgia,serif;letter-spacing:0}
+.toolbar{margin:10px 0 6px;padding:7px 0;border-bottom:1px solid #6d665b;gap:5px}
+.toolbar input,.toolbar select,.toolbar button{min-height:34px;padding:6px 8px;border:1px solid #7e766a;box-shadow:none;font-size:11px}
+.count{font:11px Georgia,serif;margin:4px 0 9px}
+.classifieds{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-flow:row dense;align-items:stretch;gap:0;border-top:2px solid #36342d;border-left:1px solid #888174}
+.ad,.ad.compact,.ad.notice,.ad.urgent,.ad.display,.ad.featured{min-height:0;grid-column:span 1;border:0;border-right:1px solid #888174;border-bottom:1px solid #888174;outline:none;box-shadow:none;background:transparent;text-align:left;padding:9px 10px 8px}
+.ad:nth-child(5n+2),.ad:nth-child(7n+3),.ad:nth-child(8n+4){background:transparent}
+.ad h3,.ad.compact h3,.ad.notice h3,.ad.urgent h3,.ad.display h3,.ad.featured h3{font:700 14px/1.12 'Libre Baskerville',Georgia,serif;text-transform:uppercase;letter-spacing:-.3px;margin:7px 0 5px}
+.ad p,.ad.compact p,.ad.notice p,.ad.urgent p,.ad.display p,.ad.featured p{font:12px/1.32 Georgia,serif;max-width:none;margin:0 0 6px}
+.ad .tag,.ad.compact .tag,.ad.notice .tag,.ad.urgent .tag,.ad.display .tag,.ad.featured .tag{display:block;background:transparent;color:#282620;border:0;border-bottom:1px solid #4e483d;font:700 9px/1.2 'Courier Prime',monospace;letter-spacing:.3px;padding:0 0 4px}
+.ad .ad-imprint,.ad.display .ad-imprint,.ad.featured .ad-imprint{font:9px/1.25 Georgia,serif;border:0;margin:4px 0;padding:0;letter-spacing:0;text-transform:none;color:#655e51}
+.ad .ad-price,.ad.display .ad-price{font:700 23px/1 'Libre Baskerville',Georgia,serif;letter-spacing:-1px;margin:5px 0}
+.ad .ad-rule{display:none}
+.ad .foot{margin-top:auto;padding-top:5px;border-top:1px dotted #9b9081;gap:3px}
+.ad .foot button{font:10px/1.2 Georgia,serif;padding:3px 0;color:#594e3f}
+.ad.display{grid-column:span 2;text-align:center;border:3px double #454035;padding:11px}
+.ad.display h3{font-size:clamp(19px,2.4vw,29px);line-height:1.05}
+.ad.display p{font-size:13px}
+.ad.notice{border:2px solid #565044;text-align:center;padding:9px}
+.ad.notice h3{font-size:16px}
+.ad.urgent{background:#eee2cf;border:2px solid #5c5145}
+.ad.urgent h3{font-size:19px}
+.ad.featured{grid-column:span 2;border:4px double #454035;text-align:center;background:#ece1d0}
+.ad.featured h3{font-size:clamp(22px,2.9vw,37px);line-height:1.05}
+.ad.featured p{font-size:14px}
+.ad.featured .tag,.ad.display .tag{font-size:10px}
+.archive-cutout,.archive-cutout.cover,.archive-cutout.tall,.archive-cutout.wide{grid-column:span 2;grid-row:span 1;padding:7px;border:0;border-right:1px solid #888174;border-bottom:1px solid #888174;background:transparent}
+.archive-cutout.cover{grid-column:span 1}
+.archive-cutout.tall{grid-column:span 1}
+.archive-cutout img,.archive-cutout.cover img,.archive-cutout.tall img,.archive-cutout.wide img{display:block;width:100%;height:auto;min-height:0;max-height:340px;object-fit:contain;filter:grayscale(1) sepia(.15) contrast(1.1);mix-blend-mode:multiply}
+.archive-cutout.tall img{max-height:440px}
+.archive-cutout figcaption{font:9px Georgia,serif;letter-spacing:0;border-top:1px solid #a9a091;margin-top:3px;padding:4px 0}
+.archive-cutout:after{display:none}
+.note{font:11px/1.45 Georgia,serif}
+@media(max-width:900px){.classifieds{grid-template-columns:repeat(3,minmax(0,1fr))}.ad.featured,.ad.display{grid-column:span 2}}
+@media(max-width:580px){.classifieds{grid-template-columns:repeat(2,minmax(0,1fr))}.ad.featured,.ad.display,.archive-cutout.wide{grid-column:span 2}.archive-cutout.cover,.archive-cutout.tall{grid-column:span 1}.paper{padding:10px}.mast{padding:17px}.mast h1{letter-spacing:-1px}}
+@media(max-width:370px){.classifieds{grid-template-columns:1fr}.ad.featured,.ad.display,.archive-cutout,.archive-cutout.cover,.archive-cutout.tall,.archive-cutout.wide{grid-column:span 1}}
 </style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. A little newspaper corner for strange announcements and extraordinary nonsense.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Notices & Other Nonsense</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">THE ODD EDITION · VOL. I</span></section><section class="paper"><div class="paperhead"><small>EST. SOMEWHERE BETWEEN FACT & FANCY</small><h2>THE PECULIAR PRESS</h2><p>All manner of unusual business conducted herein</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. No ghosts are presently employed by this publication.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
 <script>
 const notices=[
-{id:1,category:'Wanted',title:'One Experienced Ghost',body:'Must be punctual, discreet, and willing to work evenings. Previous haunting experience preferred.',fine:'Inquire after sundown at the house with the third porch light. Please refrain from rattling chains during interviews.',featured:true},
-{id:2,category:'For Sale',title:'A Slightly Suspicious Invention',body:'Patent pending since 1897. Operates with remarkable confidence and almost no measurable success.',fine:'Original instructions included. Instructions are in a language nobody recognizes.'},
-{id:3,category:'Lost & Found',title:'Found: An Unexplained Object',body:'Recovered near an abandoned railway. Warm to the touch, even in January.',fine:'Owner must describe the humming noise it makes at precisely 3:17 a.m.'},
-{id:4,category:'Employment',title:'Assistant to the Town Eccentric',body:'Duties include cataloguing unusual rocks, answering cryptic correspondence, and looking concerned.',fine:'Applicants must provide two references, neither of whom may be a raven.'},
-{id:5,category:'Public Notices',title:'A Most Unusual Town Meeting',body:'All residents are invited to discuss the mysterious bell that rings beneath the old courthouse.',fine:'Thursday at dusk. Bring a chair. The bell is not on the agenda, but it will almost certainly interrupt.'},
-{id:6,category:'For Sale',title:'One Very Ornate Key',body:'Believed to open something important. Seller has forgotten what. Handsome brass finish.',fine:'No refunds on doors, secrets, or unintended discoveries.'},
-{id:7,category:'Wanted',title:'Someone Who Remembers 1912',body:'Seeking an individual with firsthand knowledge of an event that may not have occurred.',fine:'Please bring evidence, photographs, or a persuasive story.'},
-{id:8,category:'Lost & Found',title:'Missing: One Afternoon',body:'Last seen between Tuesday lunch and Wednesday morning. Reward offered for its safe return.',fine:'Particularly interested in recovering the hours between 2 and 5.'},
-{id:9,category:'Employment',title:'Night Watchman for Empty Museum',body:'Quiet position. All exhibits remain perfectly still during daylight hours.',fine:'The museum makes no guarantees about the hours after midnight.'},
-{id:10,category:'Public Notices',title:'Notice of Peculiar Weather',body:'Residents are advised that tomorrow may include light rain, heavy fog, and a brief shower of buttons.',fine:'Umbrellas encouraged. Sewing kits optional.'},
-{id:11,category:'For Sale',title:'Collection of Curious Bottles',body:'Twenty-three glass bottles, each labelled with a different impossible destination.',fine:'One bottle appears to contain the sound of distant applause.'},
-{id:12,category:'Wanted',title:'Witness to a Very Small Miracle',body:'Did you see the garden statue move last Saturday? The owner insists it was facing east.',fine:'Reliable accounts preferred. Unreliable accounts still enthusiastically considered.'},
-{id:13,category:'Lost & Found',title:'Lost: A Rather Important Map',body:'Hand-drawn, coffee-stained, and marked with an X. The location of the X is unfortunately missing.',fine:'If discovered, kindly return to the nearest peculiar bookshop.'},
-{id:14,category:'Public Notices',title:'Regarding the Old Oak Tree',body:'The tree at the crossroads is not accepting further correspondence.',fine:'Please deposit all letters in the official postbox like everybody else.'},
-{id:15,category:'Employment',title:'Professional Cloud Identifier',body:'Must distinguish ordinary clouds from those that seem to be following particular individuals.',fine:'Binoculars provided. Strong opinions about cumulus formations encouraged.'},
-{id:16,category:'For Sale',title:'An Excellent Secondhand Mystery',body:'Hardly used. Several clues included, ending unavailable. Perfect for rainy Sundays.',fine:'Buyer assumes responsibility for any dramatic revelations.'}
+{id:1,category:'Wanted',title:'One Experienced Ghost',body:'OLD HOUSE seeks reliable evening occupant. Prior experience with rattling windows preferred. Room and board negotiable.',fine:'Inquire after sundown at the house with the third porch light. Please refrain from rattling chains during interviews.',featured:true},
+{id:2,category:'For Sale',title:'A Slightly Suspicious Invention',body:'UNUSUAL APPARATUS. Brass fittings, hand crank, original case. Maker claims excellent results. Demonstration by appointment.',fine:'Original instructions included. Instructions are in a language nobody recognizes.'},
+{id:3,category:'Lost & Found',title:'Found: An Unexplained Object',body:'FOUND near old railway: one unidentified metal article, warm to the touch. Owner must provide full description.',fine:'Owner must describe the humming noise it makes at precisely 3:17 a.m.'},
+{id:4,category:'Employment',title:'Assistant to the Town Eccentric',body:'CLERK WANTED. Catalog specimens, file correspondence, attend to miscellaneous unusual duties. Neat handwriting essential.',fine:'Applicants must provide two references, neither of whom may be a raven.'},
+{id:5,category:'Public Notices',title:'A Most Unusual Town Meeting',body:'PUBLIC MEETING Thursday, 7 o'clock, regarding recurring bell sounds reported beneath courthouse. All residents welcome.',fine:'Thursday at dusk. Bring a chair. The bell is not on the agenda, but it will almost certainly interrupt.'},
+{id:6,category:'For Sale',title:'One Very Ornate Key',body:'LARGE BRASS KEY, finely worked, origin unknown. Suitable for collector. No lock available for testing.',fine:'No refunds on doors, secrets, or unintended discoveries.'},
+{id:7,category:'Wanted',title:'Someone Who Remembers 1912',body:'INFORMATION WANTED concerning local occurrence, summer 1912. Written accounts or photographs appreciated.',fine:'Please bring evidence, photographs, or a persuasive story.'},
+{id:8,category:'Lost & Found',title:'Missing: One Afternoon',body:'LOST: Several hours between Tuesday and Wednesday. Finder kindly contact this office. Reward considered.',fine:'Particularly interested in recovering the hours between 2 and 5.'},
+{id:9,category:'Employment',title:'Night Watchman for Empty Museum',body:'NIGHT WATCHMAN required for small museum. Hours 10 p.m. to 6 a.m. Must be of steady disposition.',fine:'The museum makes no guarantees about the hours after midnight.'},
+{id:10,category:'Public Notices',title:'Notice of Peculiar Weather',body:'WEATHER NOTICE. Unusual objects reported falling near east road. Residents advised to exercise caution.',fine:'Umbrellas encouraged. Sewing kits optional.'},
+{id:11,category:'For Sale',title:'Collection of Curious Bottles',body:'23 OLD GLASS BOTTLES, assorted shapes, labels intact. Curious inscriptions. Sold as one lot.',fine:'One bottle appears to contain the sound of distant applause.'},
+{id:12,category:'Wanted',title:'Witness to a Very Small Miracle',body:'WITNESSES SOUGHT. Any person observing movement of stone figure on Saturday last, please write.',fine:'Reliable accounts preferred. Unreliable accounts still enthusiastically considered.'},
+{id:13,category:'Lost & Found',title:'Lost: A Rather Important Map',body:'LOST MAP, hand-drawn on heavy paper, coffee stain at corner. Of sentimental value. Reward.',fine:'If discovered, kindly return to the nearest peculiar bookshop.'},
+{id:14,category:'Public Notices',title:'Regarding the Old Oak Tree',body:'NOTICE. Letters left at crossroads oak will no longer be collected. Use official post box.',fine:'Please deposit all letters in the official postbox like everybody else.'},
+{id:15,category:'Employment',title:'Professional Cloud Identifier',body:'OBSERVER WANTED for occasional cloud surveys. Binoculars furnished. Apply in writing.',fine:'Binoculars provided. Strong opinions about cumulus formations encouraged.'},
+{id:16,category:'For Sale',title:'An Excellent Secondhand Mystery',body:'MYSTERY, secondhand, in fair condition. Several clues included. Ending missing. Offers invited.',fine:'Buyer assumes responsibility for any dramatic revelations.'}
 ];
 const $=id=>document.getElementById(id);let savedOnly=false;const key='curiosity-peculiar-classifieds-v1';
 function saved(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
