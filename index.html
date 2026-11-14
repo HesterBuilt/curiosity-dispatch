@@ -300,62 +300,36 @@ body{background-color:#fff8e9;background-image:radial-gradient(circle at 10% 13%
 /* Atlas-only: halve the displayed size of scout patches and illustrated critters. */
 #atlasPanel .scout-patch{scale:.5}#atlasPanel .critter-scattered{scale:.5}
 
-/* NEWS DESK / THE COLLECTOR'S EDITION: preserve original illustrated assets, dramatically change editorial rhythm */
-#newsPanel #stories,#newsPanel #top{align-items:stretch}
-#newsPanel #stories>.card,#newsPanel #top>.card{isolation:isolate;overflow:hidden;min-width:0;gap:11px;transition:transform .2s,box-shadow .2s}
-#newsPanel #stories>.card:after,#newsPanel #top>.card:after{content:"THE CURIOSITY DISPATCH  /  FIELD NOTES";display:block;position:absolute;bottom:8px;right:12px;opacity:.3;font:700 8px/1.1 Georgia,serif;letter-spacing:1.4px;pointer-events:none}
-#newsPanel #stories>.card h3 a,#newsPanel #top>.card h3 a{overflow-wrap:anywhere}
-#newsPanel #stories>.card .story-cover,#newsPanel #top>.card .story-cover{flex-shrink:0}
-#newsPanel #stories>.card:nth-child(12n+1),#newsPanel #stories>.card:nth-child(12n+7){border-width:3px;box-shadow:9px 11px 0 #b6d6c3}
-#newsPanel #stories>.card:nth-child(12n+2),#newsPanel #stories>.card:nth-child(12n+10){border-style:dashed;border-width:2px;transform:rotate(1deg)}
-#newsPanel #stories>.card:nth-child(12n+3),#newsPanel #stories>.card:nth-child(12n+8){transform:rotate(-.8deg);border-radius:25px 4px 19px 5px}
-#newsPanel #stories>.card:nth-child(12n+4),#newsPanel #stories>.card:nth-child(12n+11){border-radius:3px 25px 3px 20px}
-#newsPanel #stories>.card:nth-child(12n+5),#newsPanel #stories>.card:nth-child(12n+12){border-bottom-width:7px}
-#newsPanel #stories>.card:hover,#newsPanel #top>.card:hover{transform:translateY(-5px) rotate(0deg)}
-#newsPanel #stories>.card:nth-child(12n+1):before{content:"✦  THE BIG DISCOVERY  ✦";font:700 11px Georgia,serif;letter-spacing:2px;color:#ad603e}
-#newsPanel #stories>.card:nth-child(12n+7):before{content:"✷  FEATURED FIND  ✷";font:700 11px Georgia,serif;letter-spacing:2px;color:#ad603e}
-#newsPanel #stories>.card:nth-child(12n+6):before{content:"❧  FIELD NOTE";font:700 11px Georgia,serif;letter-spacing:1px}
-#newsPanel #stories>.card:nth-child(12n+9):before{content:"✳  FROM THE ARCHIVES";font:700 11px Georgia,serif;letter-spacing:1px}
-#newsPanel #top>.card:before{content:"EDITOR'S PICK  ✦";font:700 10px Georgia,serif;letter-spacing:1.6px}
-@media(min-width:1000px){
-#newsPanel #stories{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px;grid-auto-flow:row}
-#newsPanel #stories>.card{grid-column:span 4}
-#newsPanel #stories>.card:nth-child(12n+1),#newsPanel #stories>.card:nth-child(12n+7){grid-column:span 8;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-rows:auto auto 1fr auto auto;column-gap:23px;align-items:start;min-height:290px}
-#newsPanel #stories>.card:nth-child(12n+1) .story-cover,#newsPanel #stories>.card:nth-child(12n+7) .story-cover{grid-column:1;grid-row:2/6;align-self:stretch;height:100%;min-height:190px}
-#newsPanel #stories>.card:nth-child(12n+1) .label,#newsPanel #stories>.card:nth-child(12n+7) .label{grid-column:2;grid-row:2}
-#newsPanel #stories>.card:nth-child(12n+1) h3,#newsPanel #stories>.card:nth-child(12n+7) h3{grid-column:2;grid-row:3;font-size:clamp(22px,2.2vw,31px)}
-#newsPanel #stories>.card:nth-child(12n+1) .meta,#newsPanel #stories>.card:nth-child(12n+7) .meta{grid-column:2;grid-row:4}
-#newsPanel #stories>.card:nth-child(12n+1) .save,#newsPanel #stories>.card:nth-child(12n+7) .save{grid-column:2;grid-row:5;justify-self:start}
-#newsPanel #stories>.card:nth-child(12n+1):before,#newsPanel #stories>.card:nth-child(12n+7):before{grid-column:1/-1;grid-row:1}
-#newsPanel #stories>.card:nth-child(12n+2),#newsPanel #stories>.card:nth-child(12n+8){grid-column:span 4}
-#newsPanel #stories>.card:nth-child(12n+3),#newsPanel #stories>.card:nth-child(12n+4),#newsPanel #stories>.card:nth-child(12n+10),#newsPanel #stories>.card:nth-child(12n+11){grid-column:span 3}
-#newsPanel #stories>.card:nth-child(12n+5),#newsPanel #stories>.card:nth-child(12n+6),#newsPanel #stories>.card:nth-child(12n+9),#newsPanel #stories>.card:nth-child(12n+12){grid-column:span 6}
-#newsPanel #stories>.card:nth-child(12n+6),#newsPanel #stories>.card:nth-child(12n+9){display:grid;grid-template-columns:40% 1fr;grid-template-rows:auto 1fr auto auto;column-gap:17px}
-#newsPanel #stories>.card:nth-child(12n+6) .story-cover,#newsPanel #stories>.card:nth-child(12n+9) .story-cover{grid-column:1;grid-row:1/5;height:100%;min-height:140px}
-#newsPanel #stories>.card:nth-child(12n+6) .label,#newsPanel #stories>.card:nth-child(12n+9) .label{grid-column:2;grid-row:1}
-#newsPanel #stories>.card:nth-child(12n+6) h3,#newsPanel #stories>.card:nth-child(12n+9) h3{grid-column:2;grid-row:2}
-#newsPanel #stories>.card:nth-child(12n+6) .meta,#newsPanel #stories>.card:nth-child(12n+9) .meta{grid-column:2;grid-row:3}
-#newsPanel #stories>.card:nth-child(12n+6) .save,#newsPanel #stories>.card:nth-child(12n+9) .save{grid-column:2;grid-row:4;justify-self:start}
-#newsPanel #stories>.card:nth-child(12n+6):before,#newsPanel #stories>.card:nth-child(12n+9):before{display:none}
-#newsPanel #top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:19px}
-#newsPanel #top>.card{grid-column:span 4}
-#newsPanel #top>.card:first-child{grid-column:span 7}
-#newsPanel #top>.card:nth-child(2){grid-column:span 5}
-#newsPanel #top>.card:first-child h3{font-size:clamp(23px,2vw,30px)}
+/* News Desk: original artwork and palette, more editorial rhythm. */
+@media(min-width:850px){
+#newsPanel #stories{grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch}
+#newsPanel #stories>.card{grid-column:span 2}
+#newsPanel #stories>.card:nth-child(9n+1),#newsPanel #stories>.card:nth-child(9n+6){grid-column:span 4;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto 1fr auto auto;column-gap:22px;align-items:start}
+#newsPanel #stories>.card:nth-child(9n+1) .story-cover,#newsPanel #stories>.card:nth-child(9n+6) .story-cover{grid-column:1;grid-row:1/5;height:100%;min-height:210px}
+#newsPanel #stories>.card:nth-child(9n+1) .label,#newsPanel #stories>.card:nth-child(9n+6) .label{grid-column:2;grid-row:1}
+#newsPanel #stories>.card:nth-child(9n+1) h3,#newsPanel #stories>.card:nth-child(9n+6) h3{grid-column:2;grid-row:2;font-size:clamp(21px,2vw,28px)}
+#newsPanel #stories>.card:nth-child(9n+1) .meta,#newsPanel #stories>.card:nth-child(9n+6) .meta{grid-column:2;grid-row:3}
+#newsPanel #stories>.card:nth-child(9n+1) .save,#newsPanel #stories>.card:nth-child(9n+6) .save{grid-column:2;grid-row:4;justify-self:start}
+#newsPanel #stories>.card:nth-child(9n+3),#newsPanel #stories>.card:nth-child(9n+8){grid-column:span 2}
+#newsPanel #stories>.card:nth-child(9n+4){grid-column:span 2}
 }
-@media(min-width:650px) and (max-width:999px){
-#newsPanel #stories,#newsPanel #top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
-#newsPanel #stories>.card:nth-child(6n+1),#newsPanel #top>.card:first-child{grid-column:span 2}
-#newsPanel #stories>.card:nth-child(6n+1){display:grid;grid-template-columns:45% 1fr;column-gap:18px}
-#newsPanel #stories>.card:nth-child(6n+1) .story-cover{grid-row:1/6;grid-column:1;min-height:180px;height:100%}
-#newsPanel #stories>.card:nth-child(6n+1)>:not(.story-cover){grid-column:2}
+@media(min-width:850px) and (max-width:1100px){#newsPanel #stories>.card:nth-child(9n+1),#newsPanel #stories>.card:nth-child(9n+6){display:flex;grid-column:span 4}}
+@media(max-width:849px){#newsPanel #stories{grid-template-columns:repeat(2,minmax(0,1fr))}#newsPanel #stories>.card:nth-child(5n+1){grid-column:span 2}}
+@media(max-width:560px){#newsPanel #stories{grid-template-columns:minmax(0,1fr)}#newsPanel #stories>.card:nth-child(n){grid-column:auto}}
+
+/* Keep the previous familiar card design, with two clearly distinct editorial blocks. */
+@media(min-width:850px){
+#newsPanel #top{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px;align-items:stretch}
+#newsPanel #top>.card{grid-column:span 2}
+#newsPanel #top>.card:first-child{grid-column:span 4;display:flex;flex-direction:column}
+#newsPanel #top>.card:first-child h3{font-size:clamp(22px,2vw,29px)}
+#newsPanel #top>.card:first-child .story-cover{min-height:185px}
+#newsPanel #top>.card:nth-child(2){grid-column:span 2}
+#newsPanel #top>.card:nth-child(n+3){grid-column:span 2}
+#newsPanel #stories{grid-auto-flow:row;align-items:stretch}
 }
-@media(max-width:649px){
-#newsPanel #stories,#newsPanel #top{display:grid;grid-template-columns:minmax(0,1fr);gap:17px}
-#newsPanel #stories>.card,#newsPanel #top>.card{transform:none!important}
-#newsPanel #stories>.card:nth-child(4n+1){border-width:3px;box-shadow:7px 8px 0 #b6d6c3}
-#newsPanel #stories>.card:nth-child(4n+1) h3{font-size:24px}
-}
+@media(min-width:650px) and (max-width:849px){#newsPanel #top{grid-template-columns:repeat(2,minmax(0,1fr))}#newsPanel #top>.card:first-child{grid-column:span 2}}
+@media(max-width:649px){#newsPanel #top,#newsPanel #stories{grid-template-columns:minmax(0,1fr)}#newsPanel #top>.card,#newsPanel #stories>.card{grid-column:auto!important;display:flex!important}}
 </style></head><body><main class="wrap"><header class="mast"><div class="eyebrow">A personal cabinet of curiosities · North Georgia & beyond</div><h1>The Curiosity<br>Dispatch</h1><p>A little strange. A lot interesting. Fascinating local stories, scientific discoveries, medical frontiers, hidden history and roads worth taking the long way around.</p><div class="ornament"></div></header><div class="curio-ribbon" aria-hidden="true"><span>✿ BOTANICAL WONDERS ✿</span><span>✦ PECULIAR DISCOVERIES ✦</span><span>☼ ROADS LESS TRAVELED ☼</span><span>✧ THE BEAUTY OF BEING CURIOUS ✧</span></div><div class="sticker-tray" aria-hidden="true"><span class="sticker butterfly">🦋<small>FIELD NOTES Nº 01</small></span><span class="sticker flower">✿<small>STOP & WONDER</small></span><span class="sticker sun">☀<small>GOOD THINGS AHEAD</small></span><span class="sticker stamp">POSTCARD<br>FROM<br>EVERYWHERE <b>✦</b></span><span class="sticker compass">✧<small>TAKE THE SCENIC ROUTE</small></span></div><nav class="tabs" id="tabs" aria-label="Sections"></nav><div class="controls"><input id="search" type="search" placeholder="Search the dispatch…" aria-label="Search stories"><select id="category" aria-label="Category"><option value="">All topics</option></select><button id="savedButton">Saved stories ☆</button><button id="exportClippings" type="button" title="Download your saved article collection">↓ Export collection</button><button id="importClippings" type="button" title="Restore saved articles from a backup">↑ Restore backup</button><input id="clippingsFile" type="file" accept=".json,application/json" hidden aria-label="Choose Curiosity Dispatch backup"></div><div class="small" id="status" aria-live="polite">Loading stories…</div><section id="newsPanel"><div class="critter-scattered critter-butterfly" aria-hidden="true"><img src="images/Cute%20Orange%20Butterfly%20Portrait-1.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-snail" aria-hidden="true"><img src="images/Whimsical%20Vintage%20Snail%20Portrait-2.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-ladybug" aria-hidden="true"><img src="images/Whimsical%20Watercolor%20Ladybug%20Close-Up-3.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-frog" aria-hidden="true"><img src="images/Chubby%20Frog%20with%20Rust-Red%20Bandana-4.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-caterpillar" aria-hidden="true"><img src="images/Charming%20Vintage%20Watercolor%20Caterpillar-5.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-fox" aria-hidden="true"><img src="images/Content%20Watercolor%20Fox%20With%20Bushy%20Tail-6.png" alt="" loading="lazy" decoding="async"></div><div class="hero"><div class="label">Editor's desk · Fresh finds</div><h2>Top 5 most fascinating stories</h2><div class="small">A rotating selection of the newest discoveries. Headlines link to their original publishers.</div></div><div class="grid" id="top"></div><div class="paper-divider" aria-hidden="true"><span>✦</span><span>✿</span><span>✧</span><span>☼</span><span>✷</span><span>✿</span><span>✦</span></div><div class="sectionhead"><h2>Latest dispatches</h2><span class="small" id="count"></span></div><p class="dispatch-intro">A little shelf of interesting things, not an endless scroll. Pick a story, follow a curiosity, and come back for more whenever you like. ✦</p><div class="grid" id="stories"></div><div class="more-discoveries"><button type="button" id="loadMore" hidden>✷ Load More Discoveries ✷</button><div class="small" id="shownCount"></div></div><div class="wonder-gallery" aria-hidden="true">
 <div class="wonder-ticket"><span class="ticket-top">ADMIT ONE ✦ ADMIT WONDER</span><strong>THE<br>UNEXPECTED</strong><span>✷ ALWAYS WELCOME ✷</span></div>
 <div class="wonder-botanical"><svg viewBox="0 0 180 170" role="img" aria-label="Decorative flowers"><path d="M88 162Q70 100 94 38M86 125Q45 105 25 116M88 108Q126 83 150 96" fill="none" stroke="#367c67" stroke-width="5" stroke-linecap="round"/><path d="M81 120Q38 69 28 100Q43 124 81 120M96 103Q143 55 158 88Q139 110 96 103" fill="#79bfa2" stroke="#367c67" stroke-width="3"/><g transform="translate(94 36)"><g fill="#f9a0b7" stroke="#b95678" stroke-width="2"><ellipse rx="19" ry="33" cy="-23"/><ellipse rx="19" ry="33" cy="23"/><ellipse rx="19" ry="33" cx="-23" transform="rotate(90)"/><ellipse rx="19" ry="33" cx="23" transform="rotate(90)"/><ellipse rx="17" ry="28" cy="-23" transform="rotate(45)"/><ellipse rx="17" ry="28" cy="-23" transform="rotate(-45)"/></g><circle r="16" fill="#f5c34d" stroke="#bd8135" stroke-width="3"/></g><g transform="translate(28 114) scale(.55)"><circle r="27" fill="#f7c959"/><path d="M0-45V-30M0 30V45M-45 0H-30M30 0H45" stroke="#dc9152" stroke-width="5"/></g></svg><span>✿ A LITTLE WILD ✿</span></div>
