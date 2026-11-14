@@ -186,6 +186,33 @@ body{background:#e9e4d9;color:#282620}
 @media(max-width:900px){.classifieds{grid-template-columns:repeat(3,minmax(0,1fr))}.ad.featured,.ad.display{grid-column:span 2}}
 @media(max-width:580px){.classifieds{grid-template-columns:repeat(2,minmax(0,1fr))}.ad.featured,.ad.display,.archive-cutout.wide{grid-column:span 2}.archive-cutout.cover,.archive-cutout.tall{grid-column:span 1}.paper{padding:10px}.mast{padding:17px}.mast h1{letter-spacing:-1px}}
 @media(max-width:370px){.classifieds{grid-template-columns:1fr}.ad.featured,.ad.display,.archive-cutout,.archive-cutout.cover,.archive-cutout.tall,.archive-cutout.wide{grid-column:span 1}}
+
+/* Varied typewriter printshop rhythm: alternating scales, weights, ink and alignment. */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&family=Cutive+Mono&display=swap');
+.ad h3,.ad.compact h3,.ad.notice h3,.ad.urgent h3,.ad.display h3,.ad.featured h3{font-family:'Special Elite','Courier New',monospace;letter-spacing:-.45px}
+.ad p,.ad.compact p,.ad.notice p,.ad.urgent p,.ad.display p,.ad.featured p{font-family:'Courier Prime','Courier New',monospace;line-height:1.38}
+.ad .tag,.ad .ad-imprint{font-family:'Courier Prime','Courier New',monospace}
+.ad:nth-of-type(3n+1) h3{font-family:'Courier Prime','Courier New',monospace;font-weight:700;letter-spacing:-.9px}
+.ad:nth-of-type(4n+2) h3{font-family:'Cutive Mono','Courier New',monospace;letter-spacing:-1.1px;font-size:17px}
+.ad:nth-of-type(5n+3) h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.ad:nth-of-type(6n+4) h3{font-size:19px;line-height:1.02}
+.ad:nth-of-type(7n+5) h3{font-size:13px;letter-spacing:1.1px;text-transform:uppercase}
+.ad:nth-of-type(3n+2) p{font-family:'Cutive Mono','Courier New',monospace;font-size:12px}
+.ad:nth-of-type(4n+1) p{font-weight:700;font-size:12px}
+.ad:nth-of-type(5n+4) .tag{font-size:12px;letter-spacing:2px}
+.ad.display h3{font-family:'Special Elite','Courier New',monospace;font-size:clamp(24px,3vw,40px);letter-spacing:-1.7px;line-height:1.08}
+.ad.featured h3{font-family:'Special Elite','Courier New',monospace;font-size:clamp(29px,3.8vw,51px);letter-spacing:-2px;line-height:1.07}
+.ad.notice h3{font-family:'Courier Prime','Courier New',monospace;font-size:18px;letter-spacing:1px;border-bottom:3px double #5b5146;padding-bottom:7px}
+.ad.urgent h3{font-family:'Courier Prime','Courier New',monospace;font-size:24px;font-weight:700;letter-spacing:-1.5px}
+.ad.compact h3{font-family:'Cutive Mono','Courier New',monospace;font-size:15px;font-weight:400;line-height:1.1}
+.ad.display .tag,.ad.featured .tag{font-family:'Courier Prime','Courier New',monospace;font-size:11px;letter-spacing:2px}
+.ad.display .ad-imprint,.ad.featured .ad-imprint{font-family:'Cutive Mono','Courier New',monospace}
+.paperhead small{font-family:'Cutive Mono','Courier New',monospace;letter-spacing:2px}
+.paperhead p{font-family:'Special Elite','Courier New',monospace;font-style:normal}
+.mast h1{font-family:'Special Elite','Courier New',monospace;letter-spacing:-3px}
+.mast:before{font-family:'Courier Prime','Courier New',monospace}
+.archive-cutout:nth-of-type(2n) img{filter:grayscale(1) sepia(.08) contrast(1.22)}
+@media(max-width:580px){.ad.display h3{font-size:24px}.ad.featured h3{font-size:31px}.ad.urgent h3{font-size:19px}}
 </style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. A little newspaper corner for strange announcements and extraordinary nonsense.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Notices & Other Nonsense</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">THE ODD EDITION · VOL. I</span></section><section class="paper"><div class="paperhead"><small>EST. SOMEWHERE BETWEEN FACT & FANCY</small><h2>THE PECULIAR PRESS</h2><p>All manner of unusual business conducted herein</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. No ghosts are presently employed by this publication.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
 <script>
 const notices=[
