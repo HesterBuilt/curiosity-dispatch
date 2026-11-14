@@ -108,4 +108,26 @@ function render(){const statuses=get(),r=$('region').value,k=$('kind').value;con
 for(const v of ['all','wishlist','visited'])$(v).onclick=()=>{view=v;render()};$('region').onchange=$('kind').onchange=render;$('surprise').onclick=()=>{const r=$('region').value,k=$('kind').value;const pool=stops.filter(x=>(!r||x.region===r)&&(!k||x.kind===k));if(!pool.length){alert('No detours in those filters. Try another region or type.');return}const pick=pool[Math.floor(Math.random()*pool.length)];alert('✷ YOUR MYSTERY DETOUR ✷\n\n'+pick.name+'\n'+pick.city+'\n\n'+pick.blurb);view='all';render();const card=[...document.querySelectorAll('.card')].find(c=>c.querySelector('h3')?.textContent===pick.name);card?.scrollIntoView({behavior:'smooth',block:'center'})};render();
 
 function scatterCampPhotos(container,positions){const scenes=[["CAMPFIRE STORIES","GATHER ROUND · NO. 14","GOOD COMPANY, GOOD STORIES","https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=85","Canvas tent at a cozy campsite"],["SUNNY DAYS AHEAD","TRAIL POSTCARD · NO. 15","TAKE THE SCENIC ROUTE","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85","Warm sunlit countryside"],["THE GREAT ESCAPE","MOUNTAIN MAIL · NO. 16","WISH YOU WERE HERE","https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85","Bright mountain lake"],["OFF THE BEATEN PATH","FIELD NOTES · NO. 17","HAPPY TRAILS","https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1000&q=85","Sunlit forest path"]];positions.forEach((at,i)=>{if(container.children.length<=at)return;const d=scenes[i%scenes.length],f=document.createElement('figure');f.className='camp-scatter';const img=document.createElement('img');img.src=d[3];img.alt=d[4];img.loading='lazy';const cap=document.createElement('figcaption');for(const [tag,value] of [['small',d[1]],['strong',d[0]],['span',d[2]]]){const node=document.createElement(tag);node.textContent=value;cap.append(node)}f.append(img,cap);container.insertBefore(f,container.children[at]||null)})}
+
+/* Rotate uploaded summer camp photographs; leave header and illustrated cards unchanged. */
+(function(){
+ const photos=Array.from({length:15},(_,i)=>'images/retro-summer-camp-'+(i+1)+'.jpg');
+ const order=photos.map((_,i)=>i);
+ for(let i=14;i>0;i--){const j=Math.floor(Math.random()*(i+1));const temp=order[i];order[i]=order[j];order[j]=temp;}
+ const selector='#newsPanel .scenic-photo img,#atlasPanel .camp-scatter img,.camp-scatter img';
+ let shift=0;
+ function apply(rotate){
+  if(rotate)shift=(shift+1)%15;
+  document.querySelectorAll(selector).forEach((img,index)=>{
+   const path=photos[order[(index+shift)%15]];
+   if(img.getAttribute('src')===path)return;
+   img.onerror=function(){this.onerror=null;this.src=photos[order[(index+shift+1)%15]]};
+   img.src=path;img.decoding='async';
+  });
+ }
+ apply(false);
+ const observer=new MutationObserver(()=>apply(false));
+ observer.observe(document.body,{childList:true,subtree:true});
+ setInterval(()=>{if(!document.hidden)apply(true)},24000);
+})();
 </script></body></html>
