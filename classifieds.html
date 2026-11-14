@@ -227,6 +227,45 @@ body{background:#e9e4d9;color:#282620}
 .ad.featured p{font-family:'Courier Prime','Courier New',monospace;font-size:14px}
 .paperhead:after{content:'BELLWEATHER DISTRICT  •  ADVERTISEMENTS RECEIVED UNTIL THURSDAY NOON  •  SINGLE COPIES 5¢';display:block;border-top:1px solid #3d382f;margin-top:8px;padding-top:7px;font:700 10px/1.3 'Courier Prime',monospace;letter-spacing:.6px}
 @media(max-width:580px){.ad.compact h3{font-size:13px}.ad.compact p{font-size:12px}}
+
+/* Printer's composing room: deliberately irregular ad sizes and typographic hierarchy. */
+.classifieds{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-flow:row dense;align-items:stretch}
+.ad{grid-column:span 1;min-width:0}
+.ad.ledger{grid-column:span 2}
+.ad.banner{grid-column:span 3;border:3px double #3d352d;text-align:center;background:#eee2cf}
+.ad.banner h3{font:700 clamp(21px,2.8vw,37px)/1.05 'Special Elite',monospace;text-transform:uppercase;letter-spacing:-1.5px}
+.ad.banner p{font:15px/1.3 Georgia,serif}
+.ad.mini{padding:7px 8px;min-height:0}
+.ad.mini .tag,.ad.mini .ad-imprint{display:none}
+.ad.mini h3{font:700 11px/1.15 'Courier Prime',monospace;margin:2px 0 4px}
+.ad.mini p{font:11px/1.24 'Courier Prime',monospace;margin-bottom:5px}
+.ad.mini .foot{border-top:0;padding-top:1px}
+.ad.mini .foot button{font-size:9px}
+.ad.listing .tag{display:none}
+.ad.listing h3{font:700 15px/1.1 'Special Elite',monospace;text-transform:none;letter-spacing:-.5px}
+.ad.listing p{font:12px/1.3 Georgia,serif}
+.ad.listing .ad-imprint{font:italic 10px/1.25 Georgia,serif}
+.ad.ledger{border:1px solid #555044;padding:12px 14px}
+.ad.ledger h3{font:700 23px/1.07 'Courier Prime',monospace;letter-spacing:-1px}
+.ad.ledger p{font:13px/1.38 'Courier Prime',monospace}
+.ad.ledger .tag{font:700 9px/1.2 'Courier Prime',monospace;border-bottom:3px double #4b4439;padding-bottom:5px}
+.ad.boxed{border:3px solid #4e4538;text-align:center;padding:12px}
+.ad.boxed h3{font:700 18px/1.08 'Special Elite',monospace;text-transform:uppercase}
+.ad.boxed p{font:12px/1.3 'Courier Prime',monospace}
+.ad.strip{grid-column:span 2;border-top:3px solid #484036;border-bottom:3px solid #484036;text-align:center}
+.ad.strip h3{font:700 22px/1.1 'Courier Prime',monospace}
+.ad.strip p{font:12px/1.3 'Courier Prime',monospace}
+.ad.featured{grid-column:span 3}
+.ad.display{grid-column:span 2}
+.archive-cutout.cover,.archive-cutout.tall{grid-column:span 1}
+.archive-cutout.wide{grid-column:span 3}
+.ad:nth-child(4n) .foot{justify-content:flex-end}
+.ad:nth-child(4n) .foot button:first-child{margin-right:auto}
+.ad:nth-child(9n+3){background:#eadfcc}
+.ad:nth-child(7n+1){background:#f5eddf}
+@media(max-width:900px){.classifieds{grid-template-columns:repeat(4,minmax(0,1fr))}.ad.banner,.ad.featured,.archive-cutout.wide{grid-column:span 2}}
+@media(max-width:580px){.classifieds{grid-template-columns:repeat(2,minmax(0,1fr))}.ad.banner,.ad.featured,.ad.strip,.ad.ledger,.ad.display,.archive-cutout.wide{grid-column:span 2}.ad.mini,.ad.listing,.ad.boxed{grid-column:span 1}}
+@media(max-width:370px){.classifieds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. An assortment of private notices, estate sales, employment advertisements, and correspondence from a town with an unusually complicated past.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Classified Advertisements</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">FRIDAY EDITION · VOL. I · NO. 42</span></section><section class="paper"><div class="paperhead"><small>THE CURIOSITY DISPATCH · CLASSIFIED ADVERTISING · EDITION NO. 42</small><h2>THE PECULIAR PRESS</h2><p>Private advertisements · 2¢ per word · Box replies held at the Dispatch Office</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. All names, addresses, businesses, events, and advertisements on this page are fictional.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
 <script>
 const notices=[
@@ -496,6 +535,6 @@ function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category
 {src:'images/classifieds/classifieds-4.jpeg',label:'Illustrated personals advertisement',type:'cover'},
 {src:'images/classifieds/classifieds-3.jpeg',label:'Unusual newspaper classified clipping',type:'wide'}
 ];let position=0;function addCutout(info){const figure=document.createElement('figure');figure.className='archive-cutout '+info.type;figure.style.margin='0';const img=document.createElement('img');img.src=info.src;img.alt=info.label;img.loading='lazy';const caption=document.createElement('figcaption');caption.textContent=info.label;figure.append(img,caption);$('ads').append(figure)}
-for(const n of list){if(!q&&!cat&&!savedOnly&&[2,8,15,21,28,34].includes(n.id))addCutout(archivalImages[position++]);const a=document.createElement('article');const style=(n.id%13===0?'display':n.id%11===0?'notice':n.id%17===0?'urgent':'compact');a.className='ad '+style+(n.featured&&!cat&&!q&&!savedOnly?' featured':'');const tag=document.createElement('span');tag.className='tag';tag.textContent=n.category.toUpperCase()+' · '+String(n.id).padStart(3,'0');const h=document.createElement('h3');h.textContent=n.title;const p=document.createElement('p');p.textContent=n.body;const foot=document.createElement('div');foot.className='foot';const read=document.createElement('button');read.textContent='Read full notice ↗';read.onclick=()=>openNotice(n);const save=document.createElement('button');save.textContent=s.includes(n.id)?'★ Saved':'☆ Save';save.setAttribute('aria-label',(s.includes(n.id)?'Unsave ':'Save ')+n.title);save.onclick=()=>toggle(n.id);foot.append(read,save);const imprint=document.createElement('div');imprint.className='ad-imprint';imprint.textContent=n.fine;a.append(tag);if(style==='display'||n.featured){const rule=document.createElement('hr');rule.className='ad-rule';a.append(rule)}a.append(h);a.append(p,imprint,foot);$('ads').append(a)}if(!list.length){const e=document.createElement('p');e.className='empty';e.textContent='No notices in this department. Try another drawer.';$('ads').append(e)}}
+for(const n of list){if(!q&&!cat&&!savedOnly&&[2,8,15,21,28,34].includes(n.id))addCutout(archivalImages[position++]);const a=document.createElement('article');const style=({1:'banner',2:'mini',3:'listing',4:'ledger',5:'boxed',6:'mini',7:'strip',8:'mini',9:'ledger',10:'listing',11:'boxed',12:'mini',13:'display',14:'listing',15:'mini',16:'ledger',17:'banner',18:'mini',19:'listing',20:'boxed',21:'mini',22:'strip',23:'listing',24:'mini',25:'ledger',26:'boxed',27:'mini',28:'listing',29:'banner',30:'mini',31:'strip',32:'ledger',33:'boxed',34:'mini',35:'listing',36:'mini'})[n.id]||'listing';a.className='ad '+style+(n.featured&&!cat&&!q&&!savedOnly?' featured':'');const tag=document.createElement('span');tag.className='tag';tag.textContent=n.category.toUpperCase()+' · '+String(n.id).padStart(3,'0');const h=document.createElement('h3');h.textContent=n.title;const p=document.createElement('p');p.textContent=n.body;const foot=document.createElement('div');foot.className='foot';const read=document.createElement('button');read.textContent='Read full notice ↗';read.onclick=()=>openNotice(n);const save=document.createElement('button');save.textContent=s.includes(n.id)?'★ Saved':'☆ Save';save.setAttribute('aria-label',(s.includes(n.id)?'Unsave ':'Save ')+n.title);save.onclick=()=>toggle(n.id);foot.append(read,save);const imprint=document.createElement('div');imprint.className='ad-imprint';imprint.textContent=n.fine;if(style!=='mini'&&style!=='listing')a.append(tag);if(style==='display'||n.featured){const rule=document.createElement('hr');rule.className='ad-rule';a.append(rule)}a.append(h,p);if(style!=='mini'&&style!=='strip')a.append(imprint);a.append(foot);$('ads').append(a)}if(!list.length){const e=document.createElement('p');e.className='empty';e.textContent='No notices in this department. Try another drawer.';$('ads').append(e)}}
 $('search').addEventListener('input',render);$('category').addEventListener('change',render);$('saved').onclick=()=>{savedOnly=!savedOnly;render()};$('surprise').onclick=()=>openNotice(notices[Math.floor(Math.random()*notices.length)]);$('close').onclick=()=>{$('modal').hidden=true};$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').hidden=true};document.addEventListener('keydown',e=>{if(e.key==='Escape')$('modal').hidden=true});render();
 </script></body></html>
