@@ -213,30 +213,281 @@ body{background:#e9e4d9;color:#282620}
 .mast:before{font-family:'Courier Prime','Courier New',monospace}
 .archive-cutout:nth-of-type(2n) img{filter:grayscale(1) sepia(.08) contrast(1.22)}
 @media(max-width:580px){.ad.display h3{font-size:24px}.ad.featured h3{font-size:31px}.ad.urgent h3{font-size:19px}}
-</style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. A little newspaper corner for strange announcements and extraordinary nonsense.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Notices & Other Nonsense</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">THE ODD EDITION · VOL. I</span></section><section class="paper"><div class="paperhead"><small>EST. SOMEWHERE BETWEEN FACT & FANCY</small><h2>THE PECULIAR PRESS</h2><p>All manner of unusual business conducted herein</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. No ghosts are presently employed by this publication.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
+
+/* Credible classified advertising: quiet type, rare display boxes, period details. */
+.ad.compact h3{font:700 13px/1.18 'Courier Prime','Courier New',monospace;letter-spacing:-.3px;text-transform:uppercase;margin:5px 0 4px}
+.ad.compact p{font:12px/1.34 'Courier Prime','Courier New',monospace;font-weight:400}
+.ad.compact .tag{font:700 9px/1.2 'Courier Prime',monospace;letter-spacing:.25px;border-bottom:0;padding:0}
+.ad.compact .ad-imprint{font:10px/1.25 'Courier Prime',monospace;color:#4e483d;margin:6px 0}
+.ad.compact{padding:9px 10px;min-height:0}
+.ad .foot{margin-top:auto;opacity:.72}
+.ad .foot button{font-size:10px}
+.ad.display h3{font-family:'Special Elite','Courier New',monospace}
+.ad.featured h3{font-family:'Special Elite','Courier New',monospace;font-size:clamp(25px,3vw,38px)}
+.ad.featured p{font-family:'Courier Prime','Courier New',monospace;font-size:14px}
+.paperhead:after{content:'BELLWEATHER DISTRICT  •  ADVERTISEMENTS RECEIVED UNTIL THURSDAY NOON  •  SINGLE COPIES 5¢';display:block;border-top:1px solid #3d382f;margin-top:8px;padding-top:7px;font:700 10px/1.3 'Courier Prime',monospace;letter-spacing:.6px}
+@media(max-width:580px){.ad.compact h3{font-size:13px}.ad.compact p{font-size:12px}}
+</style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. An assortment of private notices, estate sales, employment advertisements, and correspondence from a town with an unusually complicated past.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Classified Advertisements</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">FRIDAY EDITION · VOL. I · NO. 42</span></section><section class="paper"><div class="paperhead"><small>THE CURIOSITY DISPATCH · CLASSIFIED ADVERTISING · EDITION NO. 42</small><h2>THE PECULIAR PRESS</h2><p>Private advertisements · 2¢ per word · Box replies held at the Dispatch Office</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. All names, addresses, businesses, events, and advertisements on this page are fictional.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
 <script>
 const notices=[
-{id:1,category:'Wanted',title:'One Experienced Ghost',body:'OLD HOUSE seeks reliable evening occupant. Prior experience with rattling windows preferred. Room and board negotiable.',fine:'Inquire after sundown at the house with the third porch light. Please refrain from rattling chains during interviews.',featured:true},
-{id:2,category:'For Sale',title:'A Slightly Suspicious Invention',body:'UNUSUAL APPARATUS. Brass fittings, hand crank, original case. Maker claims excellent results. Demonstration by appointment.',fine:'Original instructions included. Instructions are in a language nobody recognizes.'},
-{id:3,category:'Lost & Found',title:'Found: An Unexplained Object',body:'FOUND near old railway: one unidentified metal article, warm to the touch. Owner must provide full description.',fine:'Owner must describe the humming noise it makes at precisely 3:17 a.m.'},
-{id:4,category:'Employment',title:'Assistant to the Town Eccentric',body:'CLERK WANTED. Catalog specimens, file correspondence, attend to miscellaneous unusual duties. Neat handwriting essential.',fine:'Applicants must provide two references, neither of whom may be a raven.'},
-{id:5,category:'Public Notices',title:'A Most Unusual Town Meeting',body:'PUBLIC MEETING Thursday, 7 pm, regarding recurring bell sounds reported beneath courthouse. All residents welcome.',fine:'Thursday at dusk. Bring a chair. The bell is not on the agenda, but it will almost certainly interrupt.'},
-{id:6,category:'For Sale',title:'One Very Ornate Key',body:'LARGE BRASS KEY, finely worked, origin unknown. Suitable for collector. No lock available for testing.',fine:'No refunds on doors, secrets, or unintended discoveries.'},
-{id:7,category:'Wanted',title:'Someone Who Remembers 1912',body:'INFORMATION WANTED concerning local occurrence, summer 1912. Written accounts or photographs appreciated.',fine:'Please bring evidence, photographs, or a persuasive story.'},
-{id:8,category:'Lost & Found',title:'Missing: One Afternoon',body:'LOST: Several hours between Tuesday and Wednesday. Finder kindly contact this office. Reward considered.',fine:'Particularly interested in recovering the hours between 2 and 5.'},
-{id:9,category:'Employment',title:'Night Watchman for Empty Museum',body:'NIGHT WATCHMAN required for small museum. Hours 10 p.m. to 6 a.m. Must be of steady disposition.',fine:'The museum makes no guarantees about the hours after midnight.'},
-{id:10,category:'Public Notices',title:'Notice of Peculiar Weather',body:'WEATHER NOTICE. Unusual objects reported falling near east road. Residents advised to exercise caution.',fine:'Umbrellas encouraged. Sewing kits optional.'},
-{id:11,category:'For Sale',title:'Collection of Curious Bottles',body:'23 OLD GLASS BOTTLES, assorted shapes, labels intact. Curious inscriptions. Sold as one lot.',fine:'One bottle appears to contain the sound of distant applause.'},
-{id:12,category:'Wanted',title:'Witness to a Very Small Miracle',body:'WITNESSES SOUGHT. Any person observing movement of stone figure on Saturday last, please write.',fine:'Reliable accounts preferred. Unreliable accounts still enthusiastically considered.'},
-{id:13,category:'Lost & Found',title:'Lost: A Rather Important Map',body:'LOST MAP, hand-drawn on heavy paper, coffee stain at corner. Of sentimental value. Reward.',fine:'If discovered, kindly return to the nearest peculiar bookshop.'},
-{id:14,category:'Public Notices',title:'Regarding the Old Oak Tree',body:'NOTICE. Letters left at crossroads oak will no longer be collected. Use official post box.',fine:'Please deposit all letters in the official postbox like everybody else.'},
-{id:15,category:'Employment',title:'Professional Cloud Identifier',body:'OBSERVER WANTED for occasional cloud surveys. Binoculars furnished. Apply in writing.',fine:'Binoculars provided. Strong opinions about cumulus formations encouraged.'},
-{id:16,category:'For Sale',title:'An Excellent Secondhand Mystery',body:'MYSTERY, secondhand, in fair condition. Several clues included. Ending missing. Offers invited.',fine:'Buyer assumes responsibility for any dramatic revelations.'}
+ {
+  "id": 1,
+  "category": "Wanted",
+  "title": "Evening Tenant Required",
+  "body": "ROOM TO LET. Old house, furnished. Quiet occupant preferred; must not object to footsteps in unoccupied rooms. $4 weekly.",
+  "fine": "Mrs. E. Whitcomb · 14 Bellweather Lane · Apply after 6.",
+  "featured": true
+ },
+ {
+  "id": 2,
+  "category": "For Sale",
+  "title": "Brass Mechanical Apparatus",
+  "body": "HAND-OPERATED DEVICE, brass fittings, original case. Good condition. Demonstration available by appointment. $8.",
+  "fine": "H. Bell · Box 17 · Instructions not guaranteed."
+ },
+ {
+  "id": 3,
+  "category": "Lost & Found",
+  "title": "Metal Article Found",
+  "body": "FOUND near railway crossing, small metal instrument. Owner to describe engraving and unusual warmth.",
+  "fine": "Apply Dispatch Office · Box 23."
+ },
+ {
+  "id": 4,
+  "category": "Employment",
+  "title": "Clerk, Part-Time",
+  "body": "CLERK wanted to catalogue minerals and correspondence. Legible hand required. References requested.",
+  "fine": "Bellweather Historical Society · 9 Museum St."
+ },
+ {
+  "id": 5,
+  "category": "Public Notices",
+  "title": "Courthouse Meeting",
+  "body": "NOTICE OF MEETING. Residents invited Thursday, 7 p.m., to discuss repeated ringing beneath courthouse floor.",
+  "fine": "Town Clerk · Meeting Room No. 2."
+ },
+ {
+  "id": 6,
+  "category": "For Sale",
+  "title": "Large Brass Key",
+  "body": "HEAVY BRASS KEY, ornate bow, excellent condition. Lock unknown. 25¢ or best offer.",
+  "fine": "Mrs. E. Whitcomb · Estate articles · Box 17."
+ },
+ {
+  "id": 7,
+  "category": "Wanted",
+  "title": "Information, Summer 1912",
+  "body": "WANTED: Persons recalling the incident at Bellweather Crossing, August 1912. Photographs especially desired.",
+  "fine": "Bellweather Historical Society · Box 42."
+ },
+ {
+  "id": 8,
+  "category": "Lost & Found",
+  "title": "Missing Timepiece",
+  "body": "LOST: Silver pocket watch, stopped at 2:17. Reward $5. Finder please state location and hour.",
+  "fine": "H. Bell · Box 42 · No telephone calls."
+ },
+ {
+  "id": 9,
+  "category": "Employment",
+  "title": "Museum Night Attendant",
+  "body": "NIGHT WATCHMAN. Small local museum. 10 p.m.–6 a.m. Good references, steady nerves essential. $12 weekly.",
+  "fine": "Bellweather Historical Society · Apply in person."
+ },
+ {
+  "id": 10,
+  "category": "Public Notices",
+  "title": "Weather Advisory",
+  "body": "NOTICE. Residents of East Road report small metal objects falling during afternoon rain. Investigation pending.",
+  "fine": "Office of the Town Clerk · Ref. 19-B."
+ },
+ {
+  "id": 11,
+  "category": "For Sale",
+  "title": "Assorted Glass Bottles",
+  "body": "23 GLASS BOTTLES, corked, original paper labels. Some contents unidentified. Lot $1.",
+  "fine": "E. Whitcomb Estate · Bellweather Lane."
+ },
+ {
+  "id": 12,
+  "category": "Wanted",
+  "title": "Witnesses Requested",
+  "body": "INFORMATION sought concerning repositioning of stone figure in garden of No. 14. Saturday evening.",
+  "fine": "Mrs. E. Whitcomb · Written replies only."
+ },
+ {
+  "id": 13,
+  "category": "Lost & Found",
+  "title": "Hand-Drawn Map Lost",
+  "body": "LOST near station: folded map, coffee mark upper corner, red cross near margin. Liberal reward.",
+  "fine": "Return to Dispatch Office · Box 11."
+ },
+ {
+  "id": 14,
+  "category": "Public Notices",
+  "title": "Crossroads Oak",
+  "body": "PUBLIC NOTICE. Correspondence deposited at the old oak will not be collected after the 15th.",
+  "fine": "Town Clerk · Please use post office."
+ },
+ {
+  "id": 15,
+  "category": "Employment",
+  "title": "Weather Observer",
+  "body": "OBSERVER required, occasional outdoor work. Field glasses furnished. Must keep accurate notes.",
+  "fine": "Bellweather Historical Society · Box 42."
+ },
+ {
+  "id": 16,
+  "category": "For Sale",
+  "title": "Mystery Book, Incomplete",
+  "body": "BOUND VOLUME, secondhand, last chapter absent. Excellent reading copy. 10¢.",
+  "fine": "Bellweather Bookseller · Market Street."
+ },
+ {
+  "id": 17,
+  "category": "For Sale",
+  "title": "Sewing Machine",
+  "body": "TREADLE SEWING MACHINE, oak cabinet, good working order. $14 cash.",
+  "fine": "Mrs. H. Price · 6 Orchard Row."
+ },
+ {
+  "id": 18,
+  "category": "Employment",
+  "title": "Housekeeper Wanted",
+  "body": "HOUSEKEEPER, live-in, for elderly lady. Light cooking. Thursday evenings free. $6 weekly.",
+  "fine": "Apply 22 Market St. · References essential."
+ },
+ {
+  "id": 19,
+  "category": "For Sale",
+  "title": "Walnut Dining Table",
+  "body": "SOLID WALNUT TABLE, six chairs, sound condition. Buyer to collect. $28.",
+  "fine": "J. Mercer · 3 Mill Lane."
+ },
+ {
+  "id": 20,
+  "category": "Wanted",
+  "title": "Boarding Room Sought",
+  "body": "GENTLEMAN seeks quiet furnished room near station, with breakfast. No piano practice.",
+  "fine": "Reply Box 8 · Dispatch Office."
+ },
+ {
+  "id": 21,
+  "category": "Lost & Found",
+  "title": "Brown Leather Gloves",
+  "body": "LOST Sunday near the bridge, pair brown leather gloves. Initials A.M. sewn inside.",
+  "fine": "Reward 50¢ · Box 6."
+ },
+ {
+  "id": 22,
+  "category": "Public Notices",
+  "title": "Estate Sale",
+  "body": "ESTATE SALE Saturday, 10 a.m., household furnishings, books, clocks and miscellaneous brassware.",
+  "fine": "14 Bellweather Lane · Mrs. E. Whitcomb."
+ },
+ {
+  "id": 23,
+  "category": "For Sale",
+  "title": "Canning Jars",
+  "body": "TWO DOZEN quart jars, clean, lids included. 75¢ the lot.",
+  "fine": "Mrs. H. Price · Orchard Row."
+ },
+ {
+  "id": 24,
+  "category": "Employment",
+  "title": "Printer’s Apprentice",
+  "body": "BOY OR GIRL wanted for setting type and delivering proofs. Good spelling essential.",
+  "fine": "Apply Dispatch Printing Office · Before noon."
+ },
+ {
+  "id": 25,
+  "category": "Wanted",
+  "title": "Old Photographs",
+  "body": "OLD PHOTOGRAPHS of Bellweather Crossing purchased or copied. Especially views before 1912.",
+  "fine": "Historical Society · 9 Museum St."
+ },
+ {
+  "id": 26,
+  "category": "Public Notices",
+  "title": "Room No. 3",
+  "body": "NOTICE TO VISITORS. East gallery closed until further notice. Do not move the covered clock.",
+  "fine": "Bellweather Historical Society · Museum Office."
+ },
+ {
+  "id": 27,
+  "category": "For Sale",
+  "title": "Mantel Clock",
+  "body": "MANTEL CLOCK, mahogany case, eight-day movement. Runs well except during thunderstorms. $3.",
+  "fine": "E. Whitcomb Estate · Box 17."
+ },
+ {
+  "id": 28,
+  "category": "Lost & Found",
+  "title": "Small Black Cat",
+  "body": "MISSING black cat, white whiskers, answers to Mr. Finch when inclined. Reward.",
+  "fine": "Mrs. H. Price · Orchard Row."
+ },
+ {
+  "id": 29,
+  "category": "Wanted",
+  "title": "Reliable Witness",
+  "body": "PERSON who heard the station bell on Tuesday at 2:17 requested to contact this office.",
+  "fine": "H. Bell · Box 42 · Strict confidence."
+ },
+ {
+  "id": 30,
+  "category": "For Sale",
+  "title": "Railway Lantern",
+  "body": "RAILWAY LANTERN, red glass, brass handle, recently cleaned. $1.25.",
+  "fine": "J. Mercer · Mill Lane."
+ },
+ {
+  "id": 31,
+  "category": "Public Notices",
+  "title": "Records Department",
+  "body": "NOTICE. Records of the August 1912 incident are temporarily unavailable for public inspection.",
+  "fine": "Town Clerk · Ref. 42-C."
+ },
+ {
+  "id": 32,
+  "category": "Employment",
+  "title": "Assistant Archivist",
+  "body": "ASSISTANT wanted to sort old ledgers. Must be discreet and willing to work after closing.",
+  "fine": "Bellweather Historical Society · Apply Thursday."
+ },
+ {
+  "id": 33,
+  "category": "For Sale",
+  "title": "Ladies’ Writing Desk",
+  "body": "MAHOGANY WRITING DESK, two drawers, one locked. Key not included. $9.",
+  "fine": "Mrs. E. Whitcomb · 14 Bellweather Lane."
+ },
+ {
+  "id": 34,
+  "category": "Wanted",
+  "title": "Return of Ledger",
+  "body": "REWARD for return of small green ledger, last seen museum reading room. No questions asked.",
+  "fine": "Bellweather Historical Society · Box 42."
+ },
+ {
+  "id": 35,
+  "category": "For Sale",
+  "title": "Garden Tools",
+  "body": "SPADE, RAKE, pruning shears, all serviceable. 60¢ the lot.",
+  "fine": "J. Mercer · 3 Mill Lane."
+ },
+ {
+  "id": 36,
+  "category": "Public Notices",
+  "title": "Printer’s Correction",
+  "body": "CORRECTION. Previous notice stated the bell rang at 3:17. Correct hour is 2:17.",
+  "fine": "Dispatch Printing Office · Ed. note."
+ }
 ];
 const $=id=>document.getElementById(id);let savedOnly=false;const key='curiosity-peculiar-classifieds-v1';
 function saved(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
 function toggle(id){const s=saved(),i=s.indexOf(id);if(i<0)s.push(id);else s.splice(i,1);try{localStorage.setItem(key,JSON.stringify(s))}catch(e){}render()}
-function openNotice(n){$('modalTag').textContent=n.category+' · Fictional notice';$('modalTitle').textContent=n.title;$('modalBody').textContent=n.body;$('modalFine').textContent=n.fine;$('modal').hidden=false;$('close').focus()}
+function openNotice(n){$('modalTag').textContent=n.category+' · Advertisement No. '+String(n.id).padStart(3,'0');$('modalTitle').textContent=n.title;$('modalBody').textContent=n.body;$('modalFine').textContent=n.fine;$('modal').hidden=false;$('close').focus()}
 function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category').value,s=saved();const list=notices.filter(n=>(!cat||n.category===cat)&&(!savedOnly||s.includes(n.id))&&(!q||(n.title+' '+n.body+' '+n.fine).toLowerCase().includes(q)));$('ads').replaceChildren();$('count').textContent=list.length+' curious notice'+(list.length===1?'':'s')+' in this edition';$('saved').classList.toggle('active',savedOnly);$('saved').textContent=savedOnly?'★ Showing saved':'☆ Saved notices';const archivalImages=[
 {src:'images/classifieds/classifieds-2.jpeg',label:'The Starry Messenger · archival cover',type:'cover'},
 {src:'images/classifieds/classifieds-1.jpeg',label:'Original newspaper classified layout',type:'tall'},
@@ -245,6 +496,6 @@ function render(){const q=$('search').value.trim().toLowerCase(),cat=$('category
 {src:'images/classifieds/classifieds-4.jpeg',label:'Illustrated personals advertisement',type:'cover'},
 {src:'images/classifieds/classifieds-3.jpeg',label:'Unusual newspaper classified clipping',type:'wide'}
 ];let position=0;function addCutout(info){const figure=document.createElement('figure');figure.className='archive-cutout '+info.type;figure.style.margin='0';const img=document.createElement('img');img.src=info.src;img.alt=info.label;img.loading='lazy';const caption=document.createElement('figcaption');caption.textContent=info.label;figure.append(img,caption);$('ads').append(figure)}
-for(const n of list){if(!q&&!cat&&!savedOnly&&[1,3,6,9,12,15].includes(n.id))addCutout(archivalImages[position++]);const a=document.createElement('article');const style=['compact','display','notice','urgent','compact','display','notice','compact'][n.id%8];a.className='ad '+style+(n.featured&&!cat&&!q&&!savedOnly?' featured':'');const tag=document.createElement('span');tag.className='tag';tag.textContent=(style==='urgent'?'!!! ':'')+n.category.toUpperCase();const h=document.createElement('h3');h.textContent=n.title;const p=document.createElement('p');p.textContent=n.body;const foot=document.createElement('div');foot.className='foot';const read=document.createElement('button');read.textContent='Read full notice ↗';read.onclick=()=>openNotice(n);const save=document.createElement('button');save.textContent=s.includes(n.id)?'★ Saved':'☆ Save';save.setAttribute('aria-label',(s.includes(n.id)?'Unsave ':'Save ')+n.title);save.onclick=()=>toggle(n.id);foot.append(read,save);const imprint=document.createElement('div');imprint.className='ad-imprint';imprint.textContent=({Wanted:'Applicants & inquiries invited', 'For Sale':'Private sale · particulars within','Lost & Found':'Reward for reliable information',Employment:'Apply in person · references requested','Public Notices':'By order of the peculiar committee'})[n.category];a.append(tag);if(style==='display'||n.featured){const rule=document.createElement('hr');rule.className='ad-rule';a.append(rule)}a.append(h);if(n.id===6||n.id===11||n.id===16){const price=document.createElement('div');price.className='ad-price';price.textContent=({6:'25¢',11:'$1.00',16:'10¢'})[n.id];a.append(price)}a.append(p,imprint,foot);$('ads').append(a)}if(!list.length){const e=document.createElement('p');e.className='empty';e.textContent='No notices in this department. Try another drawer.';$('ads').append(e)}}
+for(const n of list){if(!q&&!cat&&!savedOnly&&[2,8,15,21,28,34].includes(n.id))addCutout(archivalImages[position++]);const a=document.createElement('article');const style=(n.id%13===0?'display':n.id%11===0?'notice':n.id%17===0?'urgent':'compact');a.className='ad '+style+(n.featured&&!cat&&!q&&!savedOnly?' featured':'');const tag=document.createElement('span');tag.className='tag';tag.textContent=n.category.toUpperCase()+' · '+String(n.id).padStart(3,'0');const h=document.createElement('h3');h.textContent=n.title;const p=document.createElement('p');p.textContent=n.body;const foot=document.createElement('div');foot.className='foot';const read=document.createElement('button');read.textContent='Read full notice ↗';read.onclick=()=>openNotice(n);const save=document.createElement('button');save.textContent=s.includes(n.id)?'★ Saved':'☆ Save';save.setAttribute('aria-label',(s.includes(n.id)?'Unsave ':'Save ')+n.title);save.onclick=()=>toggle(n.id);foot.append(read,save);const imprint=document.createElement('div');imprint.className='ad-imprint';imprint.textContent=n.fine;a.append(tag);if(style==='display'||n.featured){const rule=document.createElement('hr');rule.className='ad-rule';a.append(rule)}a.append(h);a.append(p,imprint,foot);$('ads').append(a)}if(!list.length){const e=document.createElement('p');e.className='empty';e.textContent='No notices in this department. Try another drawer.';$('ads').append(e)}}
 $('search').addEventListener('input',render);$('category').addEventListener('change',render);$('saved').onclick=()=>{savedOnly=!savedOnly;render()};$('surprise').onclick=()=>openNotice(notices[Math.floor(Math.random()*notices.length)]);$('close').onclick=()=>{$('modal').hidden=true};$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').hidden=true};document.addEventListener('keydown',e=>{if(e.key==='Escape')$('modal').hidden=true});render();
 </script></body></html>
