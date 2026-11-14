@@ -80,6 +80,23 @@ body{background:#d5d5d0;color:#272a27}
 @media(max-width:950px){.classifieds{grid-template-columns:repeat(3,minmax(0,1fr))}.archive-cutout.tall{grid-row:span 1}.archive-cutout.tall img{min-height:240px;max-height:350px}}
 @media(max-width:650px){.classifieds{grid-template-columns:repeat(2,minmax(0,1fr))}.ad.featured{grid-column:span 2}.archive-cutout.cover,.archive-cutout.tall{grid-column:span 1}.archive-cutout.wide{grid-column:span 2}.mast{padding:23px 19px}.mast h1{letter-spacing:-2px}.ad{padding:13px 10px}.archive-cutout img{min-height:160px}}
 @media(max-width:390px){.classifieds{grid-template-columns:1fr}.ad.featured,.archive-cutout.cover,.archive-cutout.tall,.archive-cutout.wide{grid-column:span 1}.archive-cutout img{min-height:190px}}
+
+/* Warmer vintage newspaper stock: less flat grey, without returning to bright yellow. */
+body{background:radial-gradient(circle at 90% 8%,#f4e7d5,transparent 36%),radial-gradient(circle at 6% 75%,#e9e4d9,transparent 34%),#eee8dc;color:#302e29}
+.mast{background:linear-gradient(110deg,#f3e9d9,#eee3d1 58%,#e5dac9);border-color:#4c4539;box-shadow:6px 7px 0 #d2c3ad}
+.paper{background-color:#f4eddf;background-image:repeating-linear-gradient(90deg,rgba(99,74,48,.018) 0 1px,transparent 1px 6px),radial-gradient(circle at 18% 12%,rgba(255,255,255,.42),transparent 45%);border-color:#8c7b65;box-shadow:7px 8px 0 #d5c7b1}
+.ad{background:rgba(255,252,244,.19);border-color:#756d5f}
+.ad:nth-child(5n+2){background:rgba(178,141,93,.075)}
+.ad:nth-child(7n+3){background:rgba(226,208,175,.16)}
+.ad:nth-child(8n+4){background:#eee1cd}
+.ad.featured{background:#e7d7be;border-color:#51493d}
+.archive-cutout{background:#eadfce;border-color:#756d5f}
+.archive-cutout:nth-child(3n){background:#f0e7d9}
+.archive-cutout:after{background:#f3e8d9e8}
+.nav a{background:#f9f1e5;border-color:#5b5548}
+.nav a[aria-current]{background:#4d5a48;color:#fff7e9}
+.toolbar input,.toolbar select,.toolbar button{background:#fff8ed;border-color:#786d5d;box-shadow:2px 2px 0 #d6c6af}
+.dialog{background:#f4ebdc;border-color:#fff8ed;outline-color:#5a5247}
 </style></head><body><main class="wrap"><header class="mast"><span class="eyebrow">✦ The Curiosity Dispatch · Department of Unusual Notices ✦</span><h1>The Peculiar<br>Classifieds</h1><p>Wanted, found, for sale, and otherwise inexplicable. A little newspaper corner for strange announcements and extraordinary nonsense.</p></header><nav class="nav" aria-label="Site sections"><a href="./">News Desk</a><a href="./#atlas">Explorer's Atlas</a><a href="./oddities.html">Oddities Road Trip</a><a href="./classifieds.html" aria-current="page">Peculiar Classifieds ✦</a></nav><section class="intro"><div><h2>Notices & Other Nonsense</h2><p>Browse the paper. You never know what somebody's trying to sell.</p></div><span class="issue">THE ODD EDITION · VOL. I</span></section><section class="paper"><div class="paperhead"><small>EST. SOMEWHERE BETWEEN FACT & FANCY</small><h2>THE PECULIAR PRESS</h2><p>All manner of unusual business conducted herein</p></div><div class="toolbar"><input id="search" type="search" placeholder="Search the classifieds…" aria-label="Search notices"><select id="category" aria-label="Filter classifieds"><option value="">All departments</option><option>Wanted</option><option>For Sale</option><option>Lost & Found</option><option>Employment</option><option>Public Notices</option></select><button id="saved" type="button">☆ Saved notices</button><button id="surprise" type="button">✳ Surprise me</button></div><p id="count" class="count" aria-live="polite"></p><div id="ads" class="classifieds"></div><p class="note">✦ Editorial notice: These classifieds are original fictional amusements, not actual advertisements, historical records, or offers of goods and services. Archival images are reproduced as visual references; the interactive notices are original fiction. No ghosts are presently employed by this publication.</p></section><footer>✦ The Curiosity Dispatch · Stay peculiar, Georgia ✦</footer></main><div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" type="button">Close ✕</button><span id="modalTag" class="stamp"></span><h2 id="modalTitle"></h2><p id="modalBody"></p><p id="modalFine" class="note"></p></div></div>
 <script>
 const notices=[
