@@ -252,6 +252,50 @@ body{background-color:#fff8e9;background-image:radial-gradient(circle at 10% 13%
 }
 /* On narrow screens keep the art away from the center of cards and controls. */
 @media(max-width:849px){#newsPanel .critter-scattered,#atlasPanel .critter-scattered,.wrap>.critter-scattered{width:clamp(38px,9vw,72px);opacity:.82}#atlasPanel .scout-patch{transform:scale(.58) rotate(15deg);opacity:.75}}
+
+/* Deliberately staggered, non-overlapping scrapbook scatter across full page height. */
+@media(min-width:850px){
+#newsPanel .critter-butterfly{top:7%;left:73%;right:auto}
+#newsPanel .critter-snail{top:23%;left:16%;right:auto}
+#newsPanel .critter-ladybug{top:40%;left:55%;right:auto}
+#newsPanel .critter-frog{top:57%;left:5%;right:auto}
+#newsPanel .critter-caterpillar{top:74%;left:81%;right:auto}
+#newsPanel .critter-fox{top:91%;left:36%;right:auto}
+#atlasPanel .patch-pine{top:4%;left:70%;right:auto}
+#atlasPanel .critter-butterfly{top:10%;left:25%;right:auto}
+#atlasPanel .patch-mushroom{top:17%;left:54%;right:auto}
+#atlasPanel .critter-snail{top:23%;left:8%;right:auto}
+#atlasPanel .patch-frog{top:30%;left:82%;right:auto}
+#atlasPanel .critter-ladybug{top:36%;left:40%;right:auto}
+#atlasPanel .patch-star{top:43%;left:11%;right:auto}
+#atlasPanel .critter-frog{top:49%;left:69%;right:auto}
+#atlasPanel .patch-flower{top:56%;left:28%;right:auto}
+#atlasPanel .critter-caterpillar{top:62%;left:86%;right:auto}
+#atlasPanel .patch-moon{top:69%;left:5%;right:auto}
+#atlasPanel .patch-camp{top:76%;left:58%;right:auto}
+#atlasPanel .critter-fox{top:82%;left:24%;right:auto}
+#atlasPanel .patch-heart{top:89%;left:77%;right:auto}
+#atlasPanel .patch-cryptid{top:96%;left:42%;right:auto}
+.wrap>.critter-butterfly{top:9%;left:70%;right:auto}
+.wrap>.critter-snail{top:25%;left:12%;right:auto}
+.wrap>.critter-ladybug{top:42%;left:57%;right:auto}
+.wrap>.critter-frog{top:59%;left:6%;right:auto}
+.wrap>.critter-caterpillar{top:76%;left:82%;right:auto}
+.wrap>.critter-fox{top:92%;left:34%;right:auto}
+}
+@media(max-width:849px){
+#newsPanel .critter-butterfly,#atlasPanel .critter-butterfly,.wrap>.critter-butterfly{top:9%;left:auto;right:0}
+#newsPanel .critter-snail,#atlasPanel .critter-snail,.wrap>.critter-snail{top:25%;left:0;right:auto}
+#newsPanel .critter-ladybug,#atlasPanel .critter-ladybug,.wrap>.critter-ladybug{top:42%;left:auto;right:0}
+#newsPanel .critter-frog,#atlasPanel .critter-frog,.wrap>.critter-frog{top:59%;left:0;right:auto}
+#newsPanel .critter-caterpillar,#atlasPanel .critter-caterpillar,.wrap>.critter-caterpillar{top:76%;left:auto;right:0}
+#newsPanel .critter-fox,#atlasPanel .critter-fox,.wrap>.critter-fox{top:92%;left:0;right:auto}
+#atlasPanel .patch-pine{top:4%;left:0;right:auto}#atlasPanel .patch-mushroom{top:17%;left:auto;right:0}
+#atlasPanel .patch-frog{top:30%;left:0;right:auto}#atlasPanel .patch-star{top:43%;left:auto;right:0}
+#atlasPanel .patch-flower{top:56%;left:0;right:auto}#atlasPanel .patch-moon{top:69%;left:auto;right:0}
+#atlasPanel .patch-camp{top:80%;left:0;right:auto}#atlasPanel .patch-heart{top:87%;left:auto;right:0}
+#atlasPanel .patch-cryptid{top:97%;left:auto;right:0}
+}
 </style></head><body><main class="wrap"><header class="mast"><div class="eyebrow">A personal cabinet of curiosities · North Georgia & beyond</div><h1>The Curiosity<br>Dispatch</h1><p>A little strange. A lot interesting. Fascinating local stories, scientific discoveries, medical frontiers, hidden history and roads worth taking the long way around.</p><div class="ornament"></div></header><div class="curio-ribbon" aria-hidden="true"><span>✿ BOTANICAL WONDERS ✿</span><span>✦ PECULIAR DISCOVERIES ✦</span><span>☼ ROADS LESS TRAVELED ☼</span><span>✧ THE BEAUTY OF BEING CURIOUS ✧</span></div><div class="sticker-tray" aria-hidden="true"><span class="sticker butterfly">🦋<small>FIELD NOTES Nº 01</small></span><span class="sticker flower">✿<small>STOP & WONDER</small></span><span class="sticker sun">☀<small>GOOD THINGS AHEAD</small></span><span class="sticker stamp">POSTCARD<br>FROM<br>EVERYWHERE <b>✦</b></span><span class="sticker compass">✧<small>TAKE THE SCENIC ROUTE</small></span></div><nav class="tabs" id="tabs" aria-label="Sections"></nav><div class="controls"><input id="search" type="search" placeholder="Search the dispatch…" aria-label="Search stories"><select id="category" aria-label="Category"><option value="">All topics</option></select><button id="savedButton">Saved stories ☆</button><button id="exportClippings" type="button" title="Download your saved article collection">↓ Export collection</button><button id="importClippings" type="button" title="Restore saved articles from a backup">↑ Restore backup</button><input id="clippingsFile" type="file" accept=".json,application/json" hidden aria-label="Choose Curiosity Dispatch backup"></div><div class="small" id="status" aria-live="polite">Loading stories…</div><section id="newsPanel"><div class="critter-scattered critter-butterfly" aria-hidden="true"><img src="images/Cute%20Orange%20Butterfly%20Portrait-1.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-snail" aria-hidden="true"><img src="images/Whimsical%20Vintage%20Snail%20Portrait-2.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-ladybug" aria-hidden="true"><img src="images/Whimsical%20Watercolor%20Ladybug%20Close-Up-3.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-frog" aria-hidden="true"><img src="images/Chubby%20Frog%20with%20Rust-Red%20Bandana-4.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-caterpillar" aria-hidden="true"><img src="images/Charming%20Vintage%20Watercolor%20Caterpillar-5.png" alt="" loading="lazy" decoding="async"></div><div class="critter-scattered critter-fox" aria-hidden="true"><img src="images/Content%20Watercolor%20Fox%20With%20Bushy%20Tail-6.png" alt="" loading="lazy" decoding="async"></div><div class="hero"><div class="label">Editor's desk · Fresh finds</div><h2>Top 5 most fascinating stories</h2><div class="small">A rotating selection of the newest discoveries. Headlines link to their original publishers.</div></div><div class="grid" id="top"></div><div class="paper-divider" aria-hidden="true"><span>✦</span><span>✿</span><span>✧</span><span>☼</span><span>✷</span><span>✿</span><span>✦</span></div><div class="sectionhead"><h2>Latest dispatches</h2><span class="small" id="count"></span></div><p class="dispatch-intro">A little shelf of interesting things, not an endless scroll. Pick a story, follow a curiosity, and come back for more whenever you like. ✦</p><div class="grid" id="stories"></div><div class="more-discoveries"><button type="button" id="loadMore" hidden>✷ Load More Discoveries ✷</button><div class="small" id="shownCount"></div></div><div class="wonder-gallery" aria-hidden="true">
 <div class="wonder-ticket"><span class="ticket-top">ADMIT ONE ✦ ADMIT WONDER</span><strong>THE<br>UNEXPECTED</strong><span>✷ ALWAYS WELCOME ✷</span></div>
 <div class="wonder-botanical"><svg viewBox="0 0 180 170" role="img" aria-label="Decorative flowers"><path d="M88 162Q70 100 94 38M86 125Q45 105 25 116M88 108Q126 83 150 96" fill="none" stroke="#367c67" stroke-width="5" stroke-linecap="round"/><path d="M81 120Q38 69 28 100Q43 124 81 120M96 103Q143 55 158 88Q139 110 96 103" fill="#79bfa2" stroke="#367c67" stroke-width="3"/><g transform="translate(94 36)"><g fill="#f9a0b7" stroke="#b95678" stroke-width="2"><ellipse rx="19" ry="33" cy="-23"/><ellipse rx="19" ry="33" cy="23"/><ellipse rx="19" ry="33" cx="-23" transform="rotate(90)"/><ellipse rx="19" ry="33" cx="23" transform="rotate(90)"/><ellipse rx="17" ry="28" cy="-23" transform="rotate(45)"/><ellipse rx="17" ry="28" cy="-23" transform="rotate(-45)"/></g><circle r="16" fill="#f5c34d" stroke="#bd8135" stroke-width="3"/></g><g transform="translate(28 114) scale(.55)"><circle r="27" fill="#f7c959"/><path d="M0-45V-30M0 30V45M-45 0H-30M30 0H45" stroke="#dc9152" stroke-width="5"/></g></svg><span>✿ A LITTLE WILD ✿</span></div>
